@@ -96,7 +96,16 @@ public class GQLAlgorithmTest {
             .execute()
             .checkSinkResult();
     }
-
+    
+    @Test
+    public void testAlgorithm_009() throws Exception {
+        QueryTester
+            .build()
+            .withGraphDefine("/query/modern_graph.sql")  // 使用预定义图
+            .withQueryPath("/query/gql_algorithm_009.sql")  // SQL查询文件
+            .execute()
+            .checkSinkResult();  // 验证结果
+    }
     @Test
     public void testAlgorithmKHop() throws Exception {
         QueryTester
